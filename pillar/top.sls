@@ -1,0 +1,5 @@
+base:
+  '*':
+    - network
+    - database
+#    - rabbitmq

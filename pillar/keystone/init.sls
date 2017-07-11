@@ -1,0 +1,3 @@
+include:
+  - global_vars
+

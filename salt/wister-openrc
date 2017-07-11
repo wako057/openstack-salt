@@ -1,0 +1,9 @@
+# script openrc pour wister
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USER_DOMAIN_NAME=Default
+export OS_PROJECT_NAME=cloudwister
+export OS_USERNAME=wister
+export OS_PASSWORD=USER_PASSWD
+export OS_AUTH_URL=http://ops-1:5000/v3
+export OS_IDENTITY_API_VERSION=3
+export OS_IMAGE_API_VERSION=2

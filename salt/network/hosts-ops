@@ -1,0 +1,10 @@
+127.0.0.1	localhost
+
+172.16.16.55    ops-1.wister.fr ops-1 controller
+172.16.16.56    ops-2.wister.fr ops-2 compute1
+172.16.16.57    ops-3.wister.fr ops-3 block1
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
