@@ -29,6 +29,8 @@ openstack:
   project_description: "Wister Project"
   cloud_user: wister
   glance_description: "OpenStack Image"
+  nova_description: "OpenStack Compute"
+  placement_description: "Placement API"
 
 
 nodes:

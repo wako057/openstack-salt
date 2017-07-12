@@ -32,6 +32,7 @@ glance-create-admin-enpoint:
     - name: openstack endpoint create --region {{ pillar['openstack']['region'] }} image admin http://{{ pillar['infra']['controller'] }}:9292
 
 
-
+include:
+    - glance.restart-service
 
 {% endif %}
