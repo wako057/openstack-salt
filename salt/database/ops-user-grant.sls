@@ -1,4 +1,4 @@
-{% if grains['host'] == 'ops' %}
+{% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
 keystone_grant_LOCAL:
   mysql_grants.present:
@@ -13,9 +13,6 @@ keystone_grant_ALL:
     - database: keystone.*
     - user: keystone
     - host: '%'
-
-
-{% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
 glance_grant_LOCAL:
   mysql_grants.present:

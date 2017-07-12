@@ -1,13 +1,13 @@
 {% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
-keystone_grant_LOCAL:
+keystone_revoke_LOCAL:
   mysql_grants.absent:
     - grant: all privileges
     - database: keystone.*
     - user: keystone
     - host: localhost
 
-keystone_grant_ALL:
+keystone_revoke_ALL:
   mysql_grants.absent:
     - grant: all privileges
     - database: keystone.*
@@ -16,14 +16,14 @@ keystone_grant_ALL:
 
 
 
-glance_grant_LOCAL:
+glance_revoke_LOCAL:
   mysql_grants.absent:
     - grant: all privileges
     - database: glance.*
     - user: glance
     - host: localhost
 
-glance_grant_ALL:
+glance_revoke_ALL:
   mysql_grants.absent:
     - grant: all privileges
     - database: glance.*
@@ -31,42 +31,42 @@ glance_grant_ALL:
     - host: '%'
 
 
-nova_grant_LOCAL:
+nova_revoke_LOCAL:
   mysql_grants.absent:
     - grant: all privileges
     - database: nova.*
     - user: nova
     - host: localhost
 
-nova_grant_ALL:
+nova_revoke_ALL:
   mysql_grants.absent:
     - grant: all privileges
     - database: nova.*
     - user: nova
     - host: '%'
 
-nova_api_grant_LOCAL:
+nova_api_revoke_LOCAL:
   mysql_grants.absent:
     - grant: all privileges
     - database: nova_api.*
     - user: nova
     - host: localhost
 
-nova_api_grant_ALL:
+nova_api_revoke_ALL:
   mysql_grants.absent:
     - grant: all privileges
     - database: nova_api.*
     - user: nova
     - host: '%'
 
-nova_cell0_grant_LOCAL:
+nova_cell0_revoke_LOCAL:
   mysql_grants.absent:
     - grant: all privileges
     - database: nova_cell0.*
     - user: nova
     - host: localhost
 
-nova_cell0_grant_ALL:
+nova_cell0_revoke_ALL:
   mysql_grants.absent:
     - grant: all privileges
     - database: nova_cell0.*

@@ -1,6 +1,6 @@
 {% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
-keystone_LOCAL:
+database-create-keystone_LOCAL:
   mysql_user.present:
     - name: keystone
     - host: localhost
@@ -9,7 +9,7 @@ keystone_LOCAL:
     - password: {{ pillar['password']['KEYSTONE_DBPASS'] }}
     - connection_user: root
 
-keystone_ALL:
+database-create-keystone_ALL:
   mysql_user.present:
     - name: keystone
     - host: '%'
@@ -19,7 +19,7 @@ keystone_ALL:
     - connection_user: root
 
 
-glance_LOCAL:
+database-create-glance_LOCAL:
   mysql_user.present:
     - name: glance
     - host: localhost
@@ -28,7 +28,7 @@ glance_LOCAL:
     - password: {{ pillar['password']['GLANCE_DBPASS'] }}
     - connection_user: root
 
-glance_ALL:
+database-create-glance_ALL:
   mysql_user.present:
     - name: glance
     - host: '%'
@@ -38,7 +38,7 @@ glance_ALL:
     - connection_user: root
 
 
-nova_LOCAL:
+database-create-nova_LOCAL:
   mysql_user.present:
     - name: nova
     - host: localhost
@@ -47,7 +47,7 @@ nova_LOCAL:
     - password: {{ pillar['password']['NOVA_DBPASS'] }}
     - connection_user: root
 
-nova_ALL:
+database-create-nova_ALL:
   mysql_user.present:
     - name: nova
     - host: '%'
@@ -57,7 +57,7 @@ nova_ALL:
     - connection_user: root
 
 
-neutron_LOCAL:
+database-create-neutron_LOCAL:
   mysql_user.present:
     - name: neutron
     - host: localhost
@@ -65,7 +65,7 @@ neutron_LOCAL:
     - password: {{ pillar['password']['NEUTRON_DBPASS'] }}
     - connection_user: root
 
-neutron_ALL:
+database-create-neutron_ALL:
   mysql_user.present:
     - name: neutron
     - host: '%'

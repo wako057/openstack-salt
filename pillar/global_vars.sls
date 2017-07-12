@@ -28,6 +28,7 @@ openstack:
   project_name: "wister"
   project_description: "Wister Project"
   cloud_user: wister
+  glance_description: "OpenStack Image"
 
 
 nodes:

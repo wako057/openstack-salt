@@ -4,25 +4,25 @@
 include:
     - openstack.admin-environnement
 
-ops-delete-service-bootstrap:
+keystone-delete-service-bootstrap:
   cmd.run:
     - name: openstack project delete service
 
 
-ops-delete-project:
+keystone-delete-project:
   cmd.run:
     - name: openstack project delete {{ pillar['openstack']['project_name'] }}
 
 
-ops-delete-user:
+keystone-delete-user:
   cmd.run:
     - name: openstack user delete {{ pillar['openstack']['cloud_user'] }}
 
-ops-delete-role-user:
+keystone-delete-role-user:
   cmd.run:
     - name: openstack role delete user
 
-ops-remove-role-user:
+keystone-remove-role-user:
   cmd.run:
     - name: openstack role delete user
 
