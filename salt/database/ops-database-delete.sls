@@ -1,4 +1,4 @@
-{% if pillar['infra'][grains['host']] == 'controller' %}
+{% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
 keystone_delete_db:
   mysql_database.absent:

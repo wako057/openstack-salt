@@ -15,7 +15,7 @@ keystone_grant_ALL:
     - host: '%'
 
 
-{% if pillar['infra'][grains['host']] == 'controller' %}
+{% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
 glance_grant_LOCAL:
   mysql_grants.present:

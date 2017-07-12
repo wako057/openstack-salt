@@ -17,6 +17,11 @@ salt '*' state.apply rabbitmq.rabbitmq
 
 salt '*' state.apply memcached.memcached
 
+salt '*' state.apply  openstack.general
+
+salt '*' state.apply  keystone.keystone
+
+salt '*' state.apply  keystone.endpoint-create
 
                                                     salt '*' state.apply mysql.remove_test_database
                                                     

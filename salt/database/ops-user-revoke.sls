@@ -1,4 +1,4 @@
-{% if pillar['infra'][grains['host']] == 'controller' %}
+{% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
 keystone_grant_LOCAL:
   mysql_grants.absent:

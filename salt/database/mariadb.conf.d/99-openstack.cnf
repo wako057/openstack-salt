@@ -1,5 +1,4 @@
 [mysqld]
-#bind-address = 172.16.16.55
 bind-address = {{ pillar['nodes'][pillar['infra']['controller']]['ip'] }}
 
 default-storage-engine = innodb

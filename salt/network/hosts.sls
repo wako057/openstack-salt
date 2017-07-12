@@ -5,6 +5,6 @@
         - user: root
         - group: root
         - mode: 644
-        - source: salt://network/hosts-ops
+        - source: salt://network/files/hosts-ops
 
 

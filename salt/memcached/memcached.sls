@@ -1,5 +1,6 @@
 
-{% if pillar['infra'][grains['host']] == 'controller' %}
+{% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
+
 
 python-memcache:
     pkg.installed: []

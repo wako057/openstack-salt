@@ -1,5 +1,5 @@
 
-{% if pillar['infra'][grains['host']] == 'controller' %}
+{% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
 keystone:
     pkg.installed: []
@@ -11,6 +11,14 @@ keystone:
     - template: jinja
     - require:
       - pkg: keystone
+
+
+/etc/keystone/keystone-paste.ini:
+  file.managed:
+    - source: salt://keystone/files/keystone-paste.ini
+    - require:
+      - pkg: keystone
+
 
 
 keystone-manage-db-sync:
@@ -30,7 +38,7 @@ keystone-manage-credential-setup:
 
 keystone-manage-bootstrap:
   cmd.run:
-    - name: keystone-manage bootstrap --bootstrap-password {{ pillar['password']['ADMIN_PASS'] }} --bootstrap-admin-url http://{{ pillar['infra']['controller'] }}:35357/v3/ --bootstrap-internal-url http://{{ pillar['infra']['controller'] }}:5000/v3/ --bootstrap-public-url http://{{ pillar['infra']['controller'] }}:5000/v3/ --bootstrap-region-id {{ pillar['infra']['region'] }}
+    - name: keystone-manage bootstrap --bootstrap-password {{ pillar['password']['ADMIN_PASS'] }} --bootstrap-admin-url http://{{ pillar['infra']['controller'] }}:35357/v3/ --bootstrap-internal-url http://{{ pillar['infra']['controller'] }}:5000/v3/ --bootstrap-public-url http://{{ pillar['infra']['controller'] }}:5000/v3/ --bootstrap-region-id {{ pillar['openstack']['region'] }}
 
 apache2:
     pkg.installed: []
@@ -49,5 +57,6 @@ apache2:
 supression_old_keystone_db:
   file.absent:
     - name: /var/lib/keystone/keystone.db
+
 
 {% endif %}

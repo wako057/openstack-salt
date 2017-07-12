@@ -1,5 +1,5 @@
 
-{% if pillar['infra'][grains['host']] == 'controller' %}
+{% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
 keystone_db:
   mysql_database.present:
