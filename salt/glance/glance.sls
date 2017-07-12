@@ -25,13 +25,18 @@ glance-manage-db-sync:
     - runas: glance
 
 
-glance-registry-restart:
-    service.running:
-        - name: glance-registry
-        - full_restart: true
+glance-registry-stop:
+    service.dead:
+      - name: glance-registry
 
-glance-api-restart:
+glance-registry-start:
     service.running:
-        - name: glance-api
-        - full_restart: true
+      - name: glance-registry
+
+glance-api-stop:
+    service.dead:
+      - name: glance-api
+glance-api-start:
+    service.running:
+      - name: glance-api
 {% endif %}
