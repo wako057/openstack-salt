@@ -13,6 +13,12 @@ salt '*' state.apply glance
 
 salt '*' state.apply nova
 
+salt '*' state.apply neutron
+
+salt '*' state.apply dashboard
+
+salt '*' state.apply cinder
+
 ===================================
 =============== OLD ===============
 ===================================

@@ -73,5 +73,21 @@ database-create-neutron_ALL:
     - password: {{ pillar['password']['NEUTRON_DBPASS'] }}
     - connection_user: root
 
+database-create-cinder_LOCAL:
+  mysql_user.present:
+    - name: cinder
+    - host: localhost
+    - grant: all
+    - password: {{ pillar['password']['CINDER_DBPASS'] }}
+    - connection_user: root
+
+database-create-cinder_ALL:
+  mysql_user.present:
+    - name: cinder
+    - host: '%'
+    - grant: all
+    - password: {{ pillar['password']['CINDER_DBPASS'] }}
+    - connection_user: root
+
 
 {% endif %}

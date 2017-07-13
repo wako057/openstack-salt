@@ -85,5 +85,19 @@ neutron_grant_ALL:
     - user: neutron
     - host: '%'
 
+cinder_grant_LOCAL:
+  mysql_grants.present:
+    - grant: all privileges
+    - database: cinder.*
+    - user: cinder
+    - host: localhost
+
+cinder_grant_ALL:
+  mysql_grants.present:
+    - grant: all privileges
+    - database: cinder.*
+    - user: cinder
+    - host: '%'
+
 
 {% endif %}
