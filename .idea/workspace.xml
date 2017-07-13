@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ef5c62b-6e9c-4fab-ae54-b440e83f0583" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/salt/cinder/cinder-controller.sls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/salt/cinder/cinder-storage.sls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/salt/cinder/files/controller-cinder.conf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/salt/cinder/files/lvm.conf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/salt/cinder/files/original-controller-cinder.conf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/salt/cinder/files/storage-cinder.conf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/salt/cinder/restart-services.sls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/salt/cinder/start-services.sls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/salt/cinder/stop-services.sls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/creation_reseaux.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/salt/cinder/init.sls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pillar/global_vars.sls" afterPath="$PROJECT_DIR$/pillar/global_vars.sls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/salt/cinder/endpoint-create.sls" afterPath="$PROJECT_DIR$/salt/cinder/endpoint-create.sls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/salt/nova/files/controller-nova.conf" afterPath="$PROJECT_DIR$/salt/nova/files/controller-nova.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/salt/openstack/start-services.sls" afterPath="$PROJECT_DIR$/salt/openstack/start-services.sls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/salt/openstack/stop-services.sls" afterPath="$PROJECT_DIR$/salt/openstack/stop-services.sls" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/salt/cinder/cinder-controller.sls" afterPath="$PROJECT_DIR$/salt/cinder/cinder-controller.sls" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/salt/cinder/cinder-storage.sls" afterPath="$PROJECT_DIR$/salt/cinder/cinder-storage.sls" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/salt/cinder/start-services.sls" afterPath="$PROJECT_DIR$/salt/cinder/start-services.sls" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/salt/database/ops-user-revoke.sls" afterPath="$PROJECT_DIR$/salt/database/ops-user-revoke.sls" />
     </list>
     <ignored path="openstack-salt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,56 +29,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="cinder-storage.sls" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/salt/cinder/cinder-storage.sls">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="restart-services.sls" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/salt/cinder/restart-services.sls">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="start-services.sls" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/salt/openstack/start-services.sls">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stop-services.sls" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/salt/openstack/stop-services.sls">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="storage-cinder.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/salt/cinder/files/storage-cinder.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="stop-services.sls" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/salt/cinder/stop-services.sls">
           <provider selected="true" editor-type-id="text-editor">
@@ -97,35 +39,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor>
-                <js_state />
-              </second_editor>
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="255">
-                <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="controller-nova.conf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/salt/nova/files/controller-nova.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="705">
+              <caret line="56" column="53" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller-nova.conf" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/salt/nova/files/controller-nova.conf">
+      <file leaf-file-name="ops-user-revoke.sls" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/salt/database/ops-user-revoke.sls">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+            <state relative-caret-position="690">
+              <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="init.sls" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/salt/cinder/init.sls">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -134,18 +72,58 @@
       <file leaf-file-name="start-services.sls" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/salt/cinder/start-services.sls">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller-cinder.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/salt/cinder/files/controller-cinder.conf">
+      <file leaf-file-name="global_vars.sls" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pillar/global_vars.sls">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cinder-storage.sls" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/salt/cinder/cinder-storage.sls">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cinder-controller.sls" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/salt/cinder/cinder-controller.sls">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="27" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="init.sls" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/salt/glance/init.sls">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ops-user-grant.sls" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/salt/database/ops-user-grant.sls">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="579">
+              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -159,8 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/salt/neutron/files/neutron-l2-controller-metadata_agent.ini" />
-        <option value="$PROJECT_DIR$/salt/neutron/neutron-l2-controller.sls" />
         <option value="$PROJECT_DIR$/salt/neutron/files/neutron-l2-controller-neutron.conf" />
         <option value="$PROJECT_DIR$/salt/neutron/files/neutron-l2-compute-neutron.conf" />
         <option value="$PROJECT_DIR$/salt/neutron/files/neutron-l2-compute-linuxbridge_agent.ini" />
@@ -199,17 +175,19 @@
         <option value="$PROJECT_DIR$/salt/cinder/endpoint-create.sls" />
         <option value="$PROJECT_DIR$/salt/cinder/cinder.sls" />
         <option value="$PROJECT_DIR$/salt/cinder/files/controller-cinder.conf" />
-        <option value="$PROJECT_DIR$/salt/cinder/cinder-controller.sls" />
         <option value="$PROJECT_DIR$/salt/nova/files/controller-nova.conf" />
         <option value="$PROJECT_DIR$/salt/cinder/restart-services.sls" />
         <option value="$PROJECT_DIR$/salt/cinder/files/lvm.conf" />
-        <option value="$PROJECT_DIR$/salt/cinder/cinder-storage.sls" />
         <option value="$PROJECT_DIR$/salt/openstack/admin-environnement.sls" />
         <option value="$PROJECT_DIR$/salt/cinder/files/storage-cinder.conf" />
-        <option value="$PROJECT_DIR$/salt/cinder/start-services.sls" />
         <option value="$PROJECT_DIR$/salt/openstack/stop-services.sls" />
         <option value="$PROJECT_DIR$/salt/openstack/start-services.sls" />
         <option value="$PROJECT_DIR$/salt/cinder/stop-services.sls" />
+        <option value="$PROJECT_DIR$/salt/database/ops-user-revoke.sls" />
+        <option value="$PROJECT_DIR$/salt/cinder/init.sls" />
+        <option value="$PROJECT_DIR$/salt/cinder/cinder-storage.sls" />
+        <option value="$PROJECT_DIR$/salt/cinder/cinder-controller.sls" />
+        <option value="$PROJECT_DIR$/salt/cinder/start-services.sls" />
       </list>
     </option>
   </component>
@@ -422,7 +400,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
+              <option name="myItemId" value="dashboard" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -441,28 +419,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cinder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openstack-salt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openstack-salt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="salt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cinder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="files" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -903,7 +859,7 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16025193" sideWeight="0.47907948" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17302309" sideWeight="0.5209205" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17302309" sideWeight="0.5209205" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -939,7 +895,8 @@
     <MESSAGE value="nova compute OK - regroupement methode" />
     <MESSAGE value="neutron l2 OK" />
     <MESSAGE value="Dashboard OK" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dashboard OK" />
+    <MESSAGE value="cinder intermediaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="cinder intermediaire" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -950,22 +907,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/salt/keystone/keystone.sls">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pillar/dashboard/init.sls">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/salt/keystone/endpoint-create.sls">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1070,14 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/salt/database/ops-user-grant.sls">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pillar/cinder/init.sls">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1166,14 +1099,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pillar/global_vars.sls">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/salt/nova/nova-controller.sls">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1194,14 +1119,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/salt/cinder/cinder-controller.sls">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="23" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1254,14 +1171,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/salt/glance/init.sls">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/salt/glance/restart-services.sls">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1294,22 +1203,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/salt/cinder/start-services.sls">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/salt/cinder/cinder-storage.sls">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/salt/cinder/restart-services.sls">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1330,14 +1223,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/salt/cinder/stop-services.sls">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1366,8 +1251,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/salt/nova/files/controller-nova.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+        <state relative-caret-position="705">
+          <caret line="56" column="53" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salt/database/ops-user-grant.sls">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salt/database/ops-user-revoke.sls">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salt/glance/init.sls">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salt/cinder/init.sls">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salt/cinder/cinder-storage.sls">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salt/cinder/cinder-controller.sls">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salt/cinder/stop-services.sls">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salt/cinder/start-services.sls">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pillar/global_vars.sls">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
           <folding />
         </state>
       </provider>
