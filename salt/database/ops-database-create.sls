@@ -21,4 +21,8 @@ nova_cell0_db:
   mysql_database.present:
     - name: nova_cell0
 
+neutron_db:
+  mysql_database.present:
+    - name: neutron
+
 {% endif %}

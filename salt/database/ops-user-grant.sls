@@ -71,5 +71,19 @@ nova_cell0_grant_ALL:
     - user: nova
     - host: '%'
 
+neutron_grant_LOCAL:
+  mysql_grants.present:
+    - grant: all privileges
+    - database: neutron.*
+    - user: neutron
+    - host: localhost
+
+neutron_grant_ALL:
+  mysql_grants.present:
+    - grant: all privileges
+    - database: neutron.*
+    - user: neutron
+    - host: '%'
+
 
 {% endif %}

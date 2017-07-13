@@ -20,4 +20,8 @@ nova_cell0_delete_db:
   mysql_database.absent:
     - name: nova_cell0
 
+neutron_delete_db:
+  mysql_database.absent:
+    - name: neutron
+
 {% endif%}

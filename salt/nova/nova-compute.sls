@@ -12,13 +12,4 @@ nova-compute:
       - pkg: nova-compute
 
 
-nova-compute-stop:
-    service.dead:
-      - name: nova-compute
-
-nova-compute-start:
-    service.running:
-      - name: nova-compute
-
-
 {% endif %}

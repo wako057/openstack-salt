@@ -20,6 +20,7 @@ infra:
   controller: ops-1
   compute: ops-2
   storage: ops-3
+  network_level: l2
 
 
 openstack:
@@ -31,6 +32,7 @@ openstack:
   glance_description: "OpenStack Image"
   nova_description: "OpenStack Compute"
   placement_description: "Placement API"
+  neutron_description: "OpenStack Networking"
 
 
 nodes:
@@ -43,13 +45,16 @@ nodes:
     name: ops-1
     role: controller
     ip: 172.16.16.55
+    iface-provider-name: eno2
 
   ops-2:
     name: ops-2
     role: compute
     ip: 172.16.16.56
+    iface-provider-name: eno2
 
   ops-3:
     name: ops-3
     role: storage
     ip: 172.16.16.56
+    iface-provider-name: eno2

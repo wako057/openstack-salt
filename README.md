@@ -1,4 +1,22 @@
 
+
+
+salt '*' state.apply openstack.prerequis
+
+salt '*' state.apply openstack.general
+
+salt '*' state.apply openstack-openrc
+
+salt '*' state.apply keystone
+
+salt '*' state.apply glance
+
+salt '*' state.apply nova
+
+===================================
+=============== OLD ===============
+===================================
+
 salt '*' state.apply network.hosts
 
 salt '*' state.apply network.interfaces
