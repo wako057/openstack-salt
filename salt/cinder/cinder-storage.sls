@@ -21,8 +21,16 @@ cinder-create-vgcreate:
     - source: salt://cinder/files/lvm.conf
     - template: jinja
     - require:
-      - pkg: glance
+      - pkg: cinder-volume
 
+
+/etc/cinder/cinder-controller.conf:
+  file.managed:
+    - source: salt://cinder/files/storage-cinder.conf
+    - name: /etc/cinder/cinder.conf
+    - template: jinja
+    - require:
+      - pkg: cinder-volume
 
 
 {% endif %}

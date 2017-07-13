@@ -9,9 +9,10 @@ cinder-scheduler:
 
 
 
-/etc/cinder/cinder.conf:
+/etc/cinder/cinder-controller.conf:
   file.managed:
     - source: salt://cinder/files/controller-cinder.conf
+    - name: /etc/cinder/cinder.conf
     - template: jinja
     - require:
       - pkg: cinder-api

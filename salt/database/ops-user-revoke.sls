@@ -73,5 +73,18 @@ nova_cell0_revoke_ALL:
     - user: nova
     - host: '%'
 
+cinder_revoke_LOCAL:
+  mysql_grants.absent:
+    - grant: all privileges
+    - database: cinder.*
+    - user: cinder
+    - host: localhost
+
+cinder_revoke_ALL:
+  mysql_grants.absent:
+    - grant: all privileges
+    - database: cinder.*
+    - user: cinder
+    - host: '%'
 
 {% endif %}

@@ -1,0 +1,41 @@
+. adminrc
+
+openstack image create "debian_8.8"   --file debian-8-openstack-amd64.qcow2   --disk-format qcow2 --container-format bare   --public
+
+openstack image create "debian_9"   --file debian-9-openstack-amd64.qcow2   --disk-format qcow2 --container-format bare   --public
+
+openstack image create "ubuntu_16.04.2" \
+  --file xenial-server-cloudimg-amd64-disk1.img \
+  --disk-format qcow2 --container-format bare \
+  --public
+
+
+openstack flavor create --vcpus 1 --ram 64 --disk 1 nano
+openstack flavor create --vcpus 1 --ram 1024 --disk 10 mini
+openstack flavor create --vcpus 2 --ram 2048 --disk 20 normal
+openstack flavor create --vcpus 4 --ram 4096 --disk 20 normalplus
+openstack flavor create --vcpus 2 --ram 4096 --disk 40 large
+openstack flavor create --vcpus 4 --ram 8192 --disk 80 extralarge
+
+
+
+openstack network create  --share --external --provider-physical-network provider --provider-network-type flat provider
+
+openstack subnet create --network provider \
+  --allocation-pool start=192.168.3.50,end=192.168.3.100 \
+  --dns-nameserver 8.8.4.4 --gateway 192.168.3.254 \
+  --subnet-range 192.168.3.0/24 provider
+
+
+
+. wister-openrc
+
+
+openstack keypair create --public-key ~/.ssh/id_rsa.pub gregskey
+
+openstack security group rule create --proto icmp default
+
+openstack server create --flavor normal --image debian_8.8 \
+  --nic net-id=aed3f035-2b60-4edc-96aa-006164c53af8 --security-group default \
+  --key-name gregskey wister-01
+  

@@ -10,12 +10,12 @@ cinder-api-start:
 
 {% elif pillar['nodes'][grains['host']]['role'] == 'storage' %}
 
-tgt-stop:
-    service.dead:
+tgt-start:
+    service.running:
       - name: tgt
-cinder-volume
-cinder-volume-stop:
-    service.dead:
+
+cinder-volume-start:
+    service.running:
       - name: cinder-volume
 
 {% endif %}
