@@ -33,6 +33,7 @@ openstack:
   nova_description: "OpenStack Compute"
   placement_description: "Placement API"
   neutron_description: "OpenStack Networking"
+  cinder_description: "OpenStack Block Storage"
 
 
 nodes:
