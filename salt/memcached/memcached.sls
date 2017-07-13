@@ -19,9 +19,10 @@ memcached:
 /etc/memcached.conf:
     file.managed:
         - name: /etc/memcached.conf
+        - template: jinja
         - user: root
         - group: root
         - mode: 644
-        - source: salt:///memcached/memcached.conf
+        - source: salt:///memcached/files/memcached.conf
 
 {% endif %}

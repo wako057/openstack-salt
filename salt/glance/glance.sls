@@ -24,6 +24,4 @@ glance-manage-db-sync:
     - name: glance-manage db_sync
     - runas: glance
 
-
-
 {% endif %}

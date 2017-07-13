@@ -1,4 +1,4 @@
-{% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
+
 
 include:
     - database.ops-user-revoke
@@ -7,5 +7,3 @@ include:
     - database.ops-database-create
     - database.ops-user-create
     - database.ops-user-grant
-
-{% endif %}

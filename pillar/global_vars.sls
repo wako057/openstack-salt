@@ -17,7 +17,7 @@ password:
   RABBIT_PASS: pooroJ5Ungozueweif
 
 infra:
-  controller: ops
+  controller: ops-1
   compute: ops-2
   storage: ops-3
 
@@ -34,22 +34,22 @@ openstack:
 
 
 nodes:
-  ops:
-    name: ops
-    role: controller
-    ip: 172.16.142.55
+#  ops:
+#    name: ops
+#    role: controller
+#    ip: 172.16.142.55
 
   ops-1:
     name: ops-1
     role: controller
-    ip: 192.168.16.55
+    ip: 172.16.16.55
 
   ops-2:
-    name: ops-1
+    name: ops-2
     role: compute
-    ip: 192.168.16.56
+    ip: 172.16.16.56
 
   ops-3:
-    name: ops-1
+    name: ops-3
     role: storage
-    ip: 192.168.16.57
+    ip: 172.16.16.56

@@ -1,5 +1,5 @@
 
-{% if pillar['infra'][grains['host']] == 'controller' %}
+{% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
 mariadb-server:
   pkg.installed: []
@@ -11,6 +11,8 @@ mariadb-server:
       - pkg: mariadb-server
 
 
+python-pymysql:
+  pkg.installed: []
 
 
 /etc/mysql/mariadb.conf.d/99-openstack.cnf:

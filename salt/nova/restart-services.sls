@@ -46,3 +46,16 @@ nova-novncproxy-start:
 
 
 {% endif %}
+
+{% if pillar['nodes'][grains['host']]['role'] == 'compute' %}
+
+nova-compute-stop:
+    service.dead:
+      - name: nova-compute
+
+nova-compute-start:
+    service.running:
+      - name: nova-compute
+
+
+{% endif %}

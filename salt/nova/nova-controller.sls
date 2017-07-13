@@ -22,7 +22,7 @@ nova-placement-api:
 
 /etc/nova/nova.conf:
   file.managed:
-    - source: salt://nova/files/nova-controller.conf
+    - source: salt://nova/files/controller-nova.conf
     - template: jinja
     - require:
       - pkg: nova-api
@@ -50,7 +50,6 @@ nova-manage-db-sync:
     - name: nova-manage db sync
     - runas: nova
 
-include:
-  - nova.restart-services
+
 
 {% endif %}
