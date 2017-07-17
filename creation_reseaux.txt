@@ -4,10 +4,7 @@ openstack image create "debian_8.8"   --file debian-8-openstack-amd64.qcow2   --
 
 openstack image create "debian_9"   --file debian-9-openstack-amd64.qcow2   --disk-format qcow2 --container-format bare   --public
 
-openstack image create "ubuntu_16.04.2" \
-  --file xenial-server-cloudimg-amd64-disk1.img \
-  --disk-format qcow2 --container-format bare \
-  --public
+openstack image create "ubuntu_16.04.2" --file xenial-server-cloudimg-amd64-disk1.img --disk-format qcow2 --container-format bare --public
 
 
 openstack flavor create --vcpus 1 --ram 64 --disk 1 nano
@@ -18,15 +15,70 @@ openstack flavor create --vcpus 2 --ram 4096 --disk 40 large
 openstack flavor create --vcpus 4 --ram 8192 --disk 80 extralarge
 
 
+#######################
+
+openstack security group rule create --proto icmp default
+
+openstack security group rule create --proto tcp --dst-port 22 default
+
+
+
+#### CREATION RESEAU PROVIDER
 
 openstack network create  --share --external --provider-physical-network provider --provider-network-type flat provider
 
-openstack subnet create --network provider \
-  --allocation-pool start=192.168.3.50,end=192.168.3.100 \
+openstack subnet create --network provider --allocation-pool start=192.168.3.50,end=192.168.3.100 --dns-nameserver 8.8.4.4 --gateway 192.168.3.254 --subnet-range 192.168.3.0/24 provider
+
+#### CREATION RESEAU SELF SERVICE
+
+openstack network create selfservice
+
+
+openstack subnet create --network selfservice \
+  --dns-nameserver 8.8.4.4 --gateway 172.16.17.1 \
+  --subnet-range 172.16.17.0/24 selfservice
+
+
+openstack subnet create --network selfservice \
   --dns-nameserver 8.8.4.4 --gateway 192.168.3.254 \
-  --subnet-range 192.168.3.0/24 provider
+  --subnet-range 192.168.3.0/24 selfservice
 
 
+openstack router create router
+
+neutron router-interface-add router selfservice
+
+neutron router-gateway-set router provider
+
+#######################
+
+openstack server create --flavor normal --image debian_8.8 \
+  --nic net-id=c81e3689-4b8f-4ece-94c7-b762dad9296d --security-group default \
+  --key-name gregskey wister-06
+
+openstack floating ip create provider
+
++---------------------+--------------------------------------+
+| Field               | Value                                |
++---------------------+--------------------------------------+
+| created_at          | 2017-07-17T12:19:11Z                 |
+| description         |                                      |
+| fixed_ip_address    | None                                 |
+| floating_ip_address | 192.168.3.59                         |
+| floating_network_id | 5552ecb6-eadc-450f-acc1-917341a751ba |
+| id                  | 37d3aaba-cddb-4904-ac14-e4cd92f25e7d |
+| name                | None                                 |
+| port_id             | None                                 |
+| project_id          | 15aea3742eda46a2b11b0e9892a6ffd2     |
+| revision_number     | 1                                    |
+| router_id           | None                                 |
+| status              | DOWN                                 |
+| updated_at          | 2017-07-17T12:19:11Z                 |
++---------------------+--------------------------------------+
+root@ops-1 ~ > openstack server add floating ip wister-06 192.168.3.59
+
+
+#######################
 
 . wister-openrc
 
@@ -35,7 +87,13 @@ openstack keypair create --public-key ~/.ssh/id_rsa.pub gregskey
 
 openstack security group rule create --proto icmp default
 
-openstack server create --flavor normal --image debian_8.8 \
-  --nic net-id=aed3f035-2b60-4edc-96aa-006164c53af8 --security-group default \
-  --key-name gregskey wister-01
+openstack security group rule create --proto tcp --dst-port 22 default
   
+
+
+
+
+openstack server create --flavor normal --image debian_8.8 --nic net-id=16bb1e01-968e-409f-a263-a1e31ebfc611 --security-group default --key-name gregskey wister-01
+
+
+openstack server create --flavor normal --image debian_8.8 --nic net-id=e71239d2-9c1a-42f9-b0ab-93405a17c4b3 --security-group default --key-name gregskey wister-06

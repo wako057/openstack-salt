@@ -1,5 +1,7 @@
 
+salt '*' state.apply openstack.stop-services
 
+salt '*' state.apply database.recreatedb
 
 salt '*' state.apply openstack.prerequis
 

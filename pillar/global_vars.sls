@@ -20,7 +20,8 @@ infra:
   controller: ops-1
   compute: ops-2
   storage: ops-3
-  network_level: l2
+  network_level: l3
+
 
 
 openstack:
