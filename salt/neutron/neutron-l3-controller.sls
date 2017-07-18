@@ -38,7 +38,7 @@ neutron-metadata-agent:
 
 /etc/neutron/plugins/ml2/l3-controller-linuxbridge_agent.ini:
   file.managed:
-    - source: salt://neutron/files/neutron-l2-controller-linuxbridge_agent.ini
+    - source: salt://neutron/files/neutron-l3-controller-linuxbridge_agent.ini
     - name: /etc/neutron/plugins/ml2/linuxbridge_agent.ini
     - template: jinja
     - require:

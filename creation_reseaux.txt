@@ -1,4 +1,4 @@
-. adminrc
+. admin-openrc
 
 openstack image create "debian_8.8"   --file debian-8-openstack-amd64.qcow2   --disk-format qcow2 --container-format bare   --public
 
@@ -17,13 +17,11 @@ openstack flavor create --vcpus 4 --ram 8192 --disk 80 extralarge
 
 #######################
 
-openstack security group rule create --proto icmp default
-
-openstack security group rule create --proto tcp --dst-port 22 default
-
 
 
 #### CREATION RESEAU PROVIDER
+
+. admin-openrc
 
 openstack network create  --share --external --provider-physical-network provider --provider-network-type flat provider
 
@@ -31,18 +29,20 @@ openstack subnet create --network provider --allocation-pool start=192.168.3.50,
 
 #### CREATION RESEAU SELF SERVICE
 
+. wister-openrc
+
 openstack network create selfservice
 
 
-openstack subnet create --network selfservice \
-  --dns-nameserver 8.8.4.4 --gateway 172.16.17.1 \
-  --subnet-range 172.16.17.0/24 selfservice
+openstack subnet create --network selfservice --dns-nameserver 8.8.4.4 --gateway 172.16.17.1 --subnet-range 172.16.17.0/24 selfservice
 
 
-openstack subnet create --network selfservice \
-  --dns-nameserver 8.8.4.4 --gateway 192.168.3.254 \
-  --subnet-range 192.168.3.0/24 selfservice
+# openstack subnet create --network selfservice --dns-nameserver 8.8.4.4 --gateway 192.168.3.254 --subnet-range 192.168.3.0/24 selfservice
 
+
+. admin-openrc
+
+. wister-openrc
 
 openstack router create router
 
@@ -75,8 +75,9 @@ openstack floating ip create provider
 | status              | DOWN                                 |
 | updated_at          | 2017-07-17T12:19:11Z                 |
 +---------------------+--------------------------------------+
-root@ops-1 ~ > openstack server add floating ip wister-06 192.168.3.59
+root@ops-1 ~ > openstack server add floating ip wister-06 192.168.3.57
 
+openstack server add floating ip wister-06 192.168.3.57
 
 #######################
 
@@ -88,12 +89,12 @@ openstack keypair create --public-key ~/.ssh/id_rsa.pub gregskey
 openstack security group rule create --proto icmp default
 
 openstack security group rule create --proto tcp --dst-port 22 default
-  
 
 
 
 
-openstack server create --flavor normal --image debian_8.8 --nic net-id=16bb1e01-968e-409f-a263-a1e31ebfc611 --security-group default --key-name gregskey wister-01
+
+openstack server create --flavor normal --image debian_8.8 --nic net-id=9001e572-a28e-461e-a325-fc7438cdfab3 --security-group default --key-name gregskey wister-01
 
 
-openstack server create --flavor normal --image debian_8.8 --nic net-id=e71239d2-9c1a-42f9-b0ab-93405a17c4b3 --security-group default --key-name gregskey wister-06
+openstack server create --flavor normal --image debian_8.8 --nic net-id=ed323263-977c-44a0-a463-ed88978aa7a9 --security-group default --key-name gregskey wister-06
