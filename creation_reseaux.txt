@@ -7,7 +7,6 @@ openstack image create "debian_9"   --file debian-9-openstack-amd64.qcow2   --di
 openstack image create "ubuntu_16.04.2" --file xenial-server-cloudimg-amd64-disk1.img --disk-format qcow2 --container-format bare --public
 
 
-openstack flavor create --vcpus 1 --ram 64 --disk 1 nano
 openstack flavor create --vcpus 1 --ram 1024 --disk 10 mini
 openstack flavor create --vcpus 2 --ram 2048 --disk 20 normal
 openstack flavor create --vcpus 4 --ram 4096 --disk 20 normalplus
@@ -50,6 +49,23 @@ neutron router-interface-add router selfservice
 
 neutron router-gateway-set router provider
 
+
+openstack keypair create --public-key ~/.ssh/id_rsa.pub gregskey
+
+openstack security group rule create --proto icmp default
+
+openstack security group rule create --proto tcp --dst-port 22 default
+
+
+#######################
+
+
+openstack server create --flavor normalplus --image debian_8.8 --nic net-id=e72a7d59-575b-4232-a4ac-777d38fd97e1 --security-group default --key-name gregskey wister-logs-2
+
+
+openstack server create --flavor normal --image debian_8.8 --nic net-id=3fc3050f-9366-4c2f-b98a-1cde07b2e227 --security-group default --key-name gregskey wister-06
+
+
 #######################
 
 openstack server create --flavor normal --image debian_8.8 \
@@ -81,20 +97,5 @@ openstack server add floating ip wister-06 192.168.3.57
 
 #######################
 
-. wister-openrc
 
 
-openstack keypair create --public-key ~/.ssh/id_rsa.pub gregskey
-
-openstack security group rule create --proto icmp default
-
-openstack security group rule create --proto tcp --dst-port 22 default
-
-
-
-
-
-openstack server create --flavor normal --image debian_8.8 --nic net-id=9001e572-a28e-461e-a325-fc7438cdfab3 --security-group default --key-name gregskey wister-01
-
-
-openstack server create --flavor normal --image debian_8.8 --nic net-id=ed323263-977c-44a0-a463-ed88978aa7a9 --security-group default --key-name gregskey wister-06
