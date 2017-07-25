@@ -68,6 +68,17 @@ openstack server create --flavor normal --image debian_8.8 --nic net-id=3fc3050f
 
 #######################
 
+openstack project list
+
+openstack quota show wister
+
+cinder quota-usage wister
+
+openstack quota set --gigabytes 60000 wister
+
+export project_id=$(openstack project show -f value -c id wister)
+#######################
+
 openstack server create --flavor normal --image debian_8.8 \
   --nic net-id=c81e3689-4b8f-4ece-94c7-b762dad9296d --security-group default \
   --key-name gregskey wister-06

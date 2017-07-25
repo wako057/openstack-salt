@@ -58,5 +58,5 @@ nodes:
   ops-3:
     name: ops-3
     role: storage
-    ip: 172.16.16.56
+    ip: 172.16.16.57
     iface-provider-name: eno2
