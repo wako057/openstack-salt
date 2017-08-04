@@ -56,11 +56,17 @@ openstack security group rule create --proto icmp default
 
 openstack security group rule create --proto tcp --dst-port 22 default
 
+openstack security group rule create --proto tcp --dst-port 9000 default
+
+openstack security group rule create --proto tcp --dst-port 9200:9300 default
 
 #######################
 
 
-openstack server create --flavor normalplus --image debian_8.8 --nic net-id=e72a7d59-575b-4232-a4ac-777d38fd97e1 --security-group default --key-name gregskey wister-logs-2
+openstack server create --flavor normalplus --image debian_8.8 --nic net-id=e72a7d59-575b-4232-a4ac-777d38fd97e1 --security-group default --key-name  gregskey --user-data bootstrap-salt-elasticsearch.sh wister-logs-1
+
+openstack server add volume wister-logs-3 volume-500-3
+
 
 
 openstack server create --flavor normal --image debian_8.8 --nic net-id=3fc3050f-9366-4c2f-b98a-1cde07b2e227 --security-group default --key-name gregskey wister-06

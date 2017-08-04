@@ -16,6 +16,7 @@ apt-get install -y salt-master
 IP_LAN=`hostname -I`
 
 sed -i -e "s/\#interface\:\ 0\.0\.0\.0/interface\:\ $IP_LAN/g" /etc/salt/master
+echo ''
 /etc/init.d/salt-master restart
 
 echo "On demande le reboot pour finaliser"
