@@ -4,7 +4,7 @@
 cd
 apt-get update
 apt-get dist-upgrade -y
-apt-get install -y git
+apt-get install -y git curl mlocate
 git clone https://github.com/wako057/nuxminimal.git && nuxminimal/init.sh
 
 
