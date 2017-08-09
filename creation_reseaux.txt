@@ -56,6 +56,8 @@ openstack security group rule create --proto icmp default
 
 openstack security group rule create --proto tcp --dst-port 22 default
 
+openstack security group rule create --proto tcp --dst-port 80 default
+openstack security group rule create --proto tcp --dst-port 443 default
 openstack security group rule create --proto tcp --dst-port 9000 default
 
 openstack security group rule create --proto tcp --dst-port 9200:9300 default
@@ -64,6 +66,10 @@ openstack security group rule create --proto tcp --dst-port 9200:9300 default
 
 
 openstack server create --flavor normalplus --image debian_8.8 --nic net-id=e72a7d59-575b-4232-a4ac-777d38fd97e1 --security-group default --key-name  gregskey --user-data bootstrap-salt-elasticsearch.sh wister-logs-1
+
+
+openstack volume create --size 500 volume-500-4
+
 
 openstack server add volume wister-logs-3 volume-500-3
 
@@ -116,3 +122,37 @@ openstack server add floating ip wister-06 192.168.3.57
 
 
 
+root@ops-3 ~ > pvscan
+  PV /dev/sda5   VG ops-3-vg         lvm2 [1,82 TiB / 0    free]
+  PV /dev/sdb    VG cinder-volumes   lvm2 [1,82 TiB / 263,02 GiB free]
+  PV /dev/sdc                        lvm2 [1,82 TiB]
+  PV /dev/sdd                        lvm2 [1,82 TiB]
+  Total: 4 [7,28 TiB] / in use: 2 [3,64 TiB] / in no VG: 2 [3,64 TiB]
+root@ops-3 ~ > vgextend cinder-volumes /dev/sdc
+  Volume group "cinder-volumes" successfully extended
+root@ops-3 ~ > pvscan
+  PV /dev/sda5   VG ops-3-vg         lvm2 [1,82 TiB / 0    free]
+  PV /dev/sdb    VG cinder-volumes   lvm2 [1,82 TiB / 263,02 GiB free]
+  PV /dev/sdc                        lvm2 [1,82 TiB]
+  PV /dev/sdd                        lvm2 [1,82 TiB]
+  Total: 4 [7,28 TiB] / in use: 2 [3,64 TiB] / in no VG: 2 [3,64 TiB]
+
+
+root@ops-3 ~ > pvcreate /dev/sdc
+  Physical volume "/dev/sdc" successfully created
+root@ops-3 ~ > pvcreate /dev/sdd
+  Physical volume "/dev/sdd" successfully created
+root@ops-3 ~ > pvscan
+  PV /dev/sda5   VG ops-3-vg         lvm2 [1,82 TiB / 0    free]
+  PV /dev/sdb    VG cinder-volumes   lvm2 [1,82 TiB / 263,02 GiB free]
+  PV /dev/sdc    VG cinder-volumes   lvm2 [1,82 TiB / 1,82 TiB free]
+  PV /dev/sdd                        lvm2 [1,82 TiB]
+  Total: 4 [7,28 TiB] / in use: 3 [5,46 TiB] / in no VG: 1 [1,82 TiB]
+root@ops-3 ~ > vgextend cinder-volumes /dev/sdd
+  Volume group "cinder-volumes" successfully extended
+root@ops-3 ~ > pvscan
+  PV /dev/sda5   VG ops-3-vg         lvm2 [1,82 TiB / 0    free]
+  PV /dev/sdb    VG cinder-volumes   lvm2 [1,82 TiB / 263,02 GiB free]
+  PV /dev/sdc    VG cinder-volumes   lvm2 [1,82 TiB / 1,82 TiB free]
+  PV /dev/sdd    VG cinder-volumes   lvm2 [1,82 TiB / 1,82 TiB free]
+  Total: 4 [7,28 TiB] / in use: 4 [7,28 TiB] / in no VG: 0 [0   ]
