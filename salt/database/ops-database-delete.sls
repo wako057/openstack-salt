@@ -32,4 +32,8 @@ heat_delete_db:
   mysql_database.absent:
     - name: heat
 
+magnum_delete_db:
+  mysql_database.absent:
+    - name: magnum
+
 {% endif%}

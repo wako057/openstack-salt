@@ -54,7 +54,7 @@ heat-create-domain:
 
 heat-domain-admin-create-user:
   cmd.run:
-    - name: openstack user create --domain default --password {{ pillar['password']['HEAT_DOMAIN_ADMIN'] }} heat_domain_admin
+    - name: openstack user create --domain heat --password {{ pillar['password']['HEAT_DOMAIN_ADMIN'] }} heat_domain_admin
 
 
 heat-domain-admin-add-role-user:

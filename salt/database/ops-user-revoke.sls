@@ -101,4 +101,18 @@ heat_revoke_ALL:
     - user: heat
     - host: '%'
 
+magnum_revoke_LOCAL:
+  mysql_grants.absent:
+    - grant: all privileges
+    - database: magnum.*
+    - user: magnum
+    - host: localhost
+
+magnum_revoke_ALL:
+  mysql_grants.absent:
+    - grant: all privileges
+    - database: magnum.*
+    - user: magnum
+    - host: '%'
+
 {% endif %}

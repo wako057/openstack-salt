@@ -33,4 +33,10 @@ heat_create_db:
   mysql_database.present:
     - name: heat
 
+magnum_create_db:
+  mysql_database.present:
+    - name: magnum
+
+
+
 {% endif %}

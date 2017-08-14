@@ -115,4 +115,18 @@ heat_grant_ALL:
     - host: '%'
 
 
+magnum_grant_LOCAL:
+  mysql_grants.present:
+    - grant: all privileges
+    - database: magnum.*
+    - user: magnum
+    - host: localhost
+
+magnum_grant_ALL:
+  mysql_grants.present:
+    - grant: all privileges
+    - database: magnum.*
+    - user: magnum
+    - host: '%'
+
 {% endif %}

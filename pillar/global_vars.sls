@@ -18,6 +18,10 @@ password:
   HEAT_DBPASS: More5oox8lodoh8bee
   HEAT_PASS: fo2ooquoosha0leiFu
   HEAT_DOMAIN_ADMIN: eiy1lie7Ahkeith9Ju
+  MAGNUM_DBPASS: Cu2baefeZ0uSheechu
+  MAGNUM_PASS: echohQueisiagh0doo
+  MAGNUM_DOMAIN_ADMIN: guingee7oezao4ieCh
+
 
 infra:
   controller: ops-1
@@ -39,6 +43,8 @@ openstack:
   cinder_description: "OpenStack Block Storage"
   heat_description: "OpenStack Orchestration"
   heat_domain_description: "Stack projects and users"
+  magnum_description: "OpenStack Container Infrastructure Management Service"
+  magnum_domain_description: "Owns users and projects created by magnum"
 
 
 nodes:

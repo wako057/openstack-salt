@@ -105,5 +105,21 @@ database-create-heat_ALL:
     - password: {{ pillar['password']['HEAT_DBPASS'] }}
     - connection_user: root
 
+database-create-magnum_LOCAL:
+  mysql_user.present:
+    - name: magnum
+    - host: localhost
+    - grant: all
+    - password: {{ pillar['password']['MAGNUM_DBPASS'] }}
+    - connection_user: root
+
+database-create-magnum_ALL:
+  mysql_user.present:
+    - name: magnum
+    - host: '%'
+    - grant: all
+    - password: {{ pillar['password']['MAGNUM_DBPASS'] }}
+    - connection_user: root
+
 
 {% endif %}

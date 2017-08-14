@@ -92,4 +92,14 @@ database-delete-heat_ALL:
     - name: heat
     - host: '%'
 
+database-delete-magnum_LOCAL:
+  mysql_user.absent:
+    - name: magnum
+    - host: localhost
+
+database-delete-magnum_ALL:
+  mysql_user.absent:
+    - name: magnum
+    - host: '%'
+
 {% endif %}
