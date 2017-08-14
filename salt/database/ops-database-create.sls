@@ -29,5 +29,8 @@ cinder_create_db:
   mysql_database.present:
     - name: cinder
 
+heat_create_db:
+  mysql_database.present:
+    - name: heat
 
 {% endif %}

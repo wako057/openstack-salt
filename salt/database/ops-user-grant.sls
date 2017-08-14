@@ -100,4 +100,19 @@ cinder_grant_ALL:
     - host: '%'
 
 
+heat_grant_LOCAL:
+  mysql_grants.present:
+    - grant: all privileges
+    - database: heat.*
+    - user: heat
+    - host: localhost
+
+heat_grant_ALL:
+  mysql_grants.present:
+    - grant: all privileges
+    - database: heat.*
+    - user: heat
+    - host: '%'
+
+
 {% endif %}

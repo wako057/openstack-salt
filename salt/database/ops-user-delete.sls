@@ -72,4 +72,24 @@ database-delete-neutron_ALL:
     - name: neutron
     - host: '%'
 
+database-delete-cinder_LOCAL:
+  mysql_user.absent:
+    - name: cinder
+    - host: localhost
+
+database-delete-cinder_ALL:
+  mysql_user.absent:
+    - name: cinder
+    - host: '%'
+
+database-delete-heat_LOCAL:
+  mysql_user.absent:
+    - name: heat
+    - host: localhost
+
+database-delete-heat_ALL:
+  mysql_user.absent:
+    - name: heat
+    - host: '%'
+
 {% endif %}

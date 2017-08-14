@@ -10,9 +10,11 @@ openstack image create "ubuntu_16.04.2" --file xenial-server-cloudimg-amd64-disk
 openstack flavor create --vcpus 1 --ram 1024 --disk 10 mini
 openstack flavor create --vcpus 2 --ram 2048 --disk 20 normal
 openstack flavor create --vcpus 4 --ram 4096 --disk 20 normalplus
+
 openstack flavor create --vcpus 2 --ram 4096 --disk 40 large
 openstack flavor create --vcpus 4 --ram 8192 --disk 80 extralarge
 
+openstack flavor create --vcpus 4 --ram 8192 --disk 20 ramplus
 
 #######################
 
@@ -59,10 +61,19 @@ openstack security group rule create --proto tcp --dst-port 22 default
 openstack security group rule create --proto tcp --dst-port 80 default
 openstack security group rule create --proto tcp --dst-port 443 default
 openstack security group rule create --proto tcp --dst-port 9000 default
+openstack security group rule create --proto tcp --dst-port 5601 default
 
 openstack security group rule create --proto tcp --dst-port 9200:9300 default
 
 #######################
+
+
+openstack server create --flavor normalplus --image debian_8.8 --nic net-id=e72a7d59-575b-4232-a4ac-777d38fd97e1 --security-group default --key-name  gregskey --user-data bootstrap-salt-master-01.sh salt-master-01
+
+openstack server create --flavor normalplus --image debian_8.8 --nic net-id=e72a7d59-575b-4232-a4ac-777d38fd97e1 --security-group default --key-name  gregskey --user-data bootstrap-salt-elasticsearch.sh wister-logs-01
+
+openstack server create --flavor ramplus --image debian_8.8 --nic net-id=e72a7d59-575b-4232-a4ac-777d38fd97e1 --security-group default --key-name  gregskey --user-data bootstrap-salt-elasticsearch.sh wister-forwarder-01
+
 
 
 openstack server create --flavor normalplus --image debian_8.8 --nic net-id=e72a7d59-575b-4232-a4ac-777d38fd97e1 --security-group default --key-name  gregskey --user-data bootstrap-salt-elasticsearch.sh wister-logs-1
@@ -74,6 +85,9 @@ openstack volume create --size 500 volume-500-4
 openstack server add volume wister-logs-3 volume-500-3
 
 
+
+
+ramplus
 
 openstack server create --flavor normal --image debian_8.8 --nic net-id=3fc3050f-9366-4c2f-b98a-1cde07b2e227 --security-group default --key-name gregskey wister-06
 

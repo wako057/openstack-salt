@@ -50,7 +50,9 @@ salt '*' state.apply  keystone.keystone
 salt '*' state.apply  keystone.endpoint-create
 
                                                     salt '*' state.apply mysql.remove_test_database
-                                                    
+
                                                     salt '*' mysql.processlist
 
+
+salt 'wister-logs-fowarder.novalocal' grains.items
 

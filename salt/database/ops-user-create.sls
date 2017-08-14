@@ -89,5 +89,21 @@ database-create-cinder_ALL:
     - password: {{ pillar['password']['CINDER_DBPASS'] }}
     - connection_user: root
 
+database-create-heat_LOCAL:
+  mysql_user.present:
+    - name: heat
+    - host: localhost
+    - grant: all
+    - password: {{ pillar['password']['HEAT_DBPASS'] }}
+    - connection_user: root
+
+database-create-heat_ALL:
+  mysql_user.present:
+    - name: heat
+    - host: '%'
+    - grant: all
+    - password: {{ pillar['password']['HEAT_DBPASS'] }}
+    - connection_user: root
+
 
 {% endif %}

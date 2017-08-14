@@ -25,7 +25,11 @@ neutron_delete_db:
     - name: neutron
 
 cinder_delete_db:
-  mysql_database.present:
+  mysql_database.absent:
     - name: cinder
+
+heat_delete_db:
+  mysql_database.absent:
+    - name: heat
 
 {% endif%}

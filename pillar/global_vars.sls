@@ -15,13 +15,15 @@ password:
   NOVA_PASS: lu6ooR5eiku0eexeis
   PLACEMENT_PASS: iZee5tiTh9siequieN
   RABBIT_PASS: pooroJ5Ungozueweif
+  HEAT_DBPASS: More5oox8lodoh8bee
+  HEAT_PASS: fo2ooquoosha0leiFu
+  HEAT_DOMAIN_ADMIN: eiy1lie7Ahkeith9Ju
 
 infra:
   controller: ops-1
   compute: ops-2
   storage: ops-3
   network_level: l3
-
 
 
 openstack:
@@ -35,6 +37,8 @@ openstack:
   placement_description: "Placement API"
   neutron_description: "OpenStack Networking"
   cinder_description: "OpenStack Block Storage"
+  heat_description: "OpenStack Orchestration"
+  heat_domain_description: "Stack projects and users"
 
 
 nodes:

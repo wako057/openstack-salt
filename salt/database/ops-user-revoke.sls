@@ -87,4 +87,18 @@ cinder_revoke_ALL:
     - user: cinder
     - host: '%'
 
+heat_revoke_LOCAL:
+  mysql_grants.absent:
+    - grant: all privileges
+    - database: heat.*
+    - user: heat
+    - host: localhost
+
+heat_revoke_ALL:
+  mysql_grants.absent:
+    - grant: all privileges
+    - database: heat.*
+    - user: heat
+    - host: '%'
+
 {% endif %}
