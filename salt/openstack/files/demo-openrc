@@ -1,7 +1,7 @@
 # script openrc pour wister
 export OS_PROJECT_DOMAIN_NAME=Default
 export OS_USER_DOMAIN_NAME=Default
-export OS_PROJECT_NAME=cloudwister
+export OS_PROJECT_NAME={{ pillar['openstack']['project_name'] }}
 export OS_USERNAME={{ pillar['openstack']['cloud_user'] }}
 export OS_PASSWORD={{ pillar['password']['DEMO_PASS'] }}
 export OS_AUTH_URL=http://{{ pillar['infra']['controller'] }}:5000/v3

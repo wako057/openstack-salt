@@ -28,4 +28,11 @@ nova-compute-start:
     service.running:
       - name: nova-compute
 
+{% else %}
+
+nova-start-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif %}

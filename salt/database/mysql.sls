@@ -21,5 +21,11 @@ python-pymysql:
     - source: salt://database/mariadb.conf.d/99-openstack.cnf
     - template: jinja
 
+{% else %}
+
+mysql-avoid-error:
+  test.nop:
+    - name: minionAlive
+
 
 {% endif %}

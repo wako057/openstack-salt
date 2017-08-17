@@ -121,5 +121,11 @@ database-create-magnum_ALL:
     - password: {{ pillar['password']['MAGNUM_DBPASS'] }}
     - connection_user: root
 
+{% else %}
+
+mysql-usercreate-avoid-error:
+  test.nop:
+    - name: minionAlive
+
 
 {% endif %}

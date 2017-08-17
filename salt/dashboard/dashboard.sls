@@ -22,5 +22,10 @@ openstack-dashboard:
     - require:
       - pkg: openstack-dashboard
 
+{% else %}
+
+dashboard-avoid-error:
+  test.nop:
+    - name: minionAlive
 
 {% endif %}

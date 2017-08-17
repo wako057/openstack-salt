@@ -8,4 +8,11 @@ glance-api-start:
     service.running:
       - name: glance-api
 
+{% else %}
+
+glance-start-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif %}

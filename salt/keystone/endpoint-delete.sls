@@ -26,5 +26,12 @@ keystone-remove-role-user:
   cmd.run:
     - name: openstack role delete user
 
+{% else %}
+
+keystone-endpoint-delete-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 
 {% endif %}

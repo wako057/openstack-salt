@@ -27,5 +27,11 @@ glance-delete-user:
   cmd.run:
     - name: openstack user delete glance
 
+{% else %}
+
+glance-endpoint-delete-avoid-error:
+  test.nop:
+    - name: minionAlive
+
 
 {% endif %}

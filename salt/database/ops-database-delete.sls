@@ -36,4 +36,11 @@ magnum_delete_db:
   mysql_database.absent:
     - name: magnum
 
+{% else %}
+
+mysql-dbdelete-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif%}

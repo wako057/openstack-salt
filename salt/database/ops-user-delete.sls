@@ -102,4 +102,11 @@ database-delete-magnum_ALL:
     - name: magnum
     - host: '%'
 
+{% else %}
+
+mysql-userdelete-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif %}

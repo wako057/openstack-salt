@@ -1,13 +1,14 @@
 {% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
-keystone-stop:
+mysql-stop:
     service.dead:
-      - name: apache2
+      - name: mysql
 
 {% else %}
 
-keystone-stop-avoid-error:
+mysql-stop-avoid-error:
   test.nop:
     - name: minionAlive
+
 
 {% endif %}

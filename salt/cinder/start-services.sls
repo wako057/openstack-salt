@@ -18,4 +18,10 @@ cinder-volume-start:
     service.running:
       - name: cinder-volume
 
+{% else %}
+
+cinder-start-avoid-error:
+  test.nop:
+    - name: minionAlive
+
 {% endif %}

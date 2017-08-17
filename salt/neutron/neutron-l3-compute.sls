@@ -20,4 +20,11 @@ neutron-linuxbridge-agent:
     - require:
       - pkg: neutron-linuxbridge-agent
 
+{% else %}
+
+neutron-l3-compute-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif %}

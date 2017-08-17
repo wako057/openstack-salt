@@ -2,8 +2,8 @@ admin-openrc:
     environ.setenv:
         - name: doesnotmatter
         - value:
-            OS_PROJECT_DOMAIN_NAME: Default
-            OS_USER_DOMAIN_NAME: Default
+            OS_PROJECT_DOMAIN_NAME: default
+            OS_USER_DOMAIN_NAME: default
             OS_PROJECT_NAME: admin
             OS_USERNAME: admin
             OS_PASSWORD: {{ pillar['password']['ADMIN_PASS'] }}

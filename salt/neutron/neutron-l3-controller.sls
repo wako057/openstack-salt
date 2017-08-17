@@ -75,5 +75,12 @@ neutron-l3-manage-db-sync:
     - runas: neutron
 
 
+{% else %}
+
+neutron-l3-controller-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 
 {% endif %}

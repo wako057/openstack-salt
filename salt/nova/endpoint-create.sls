@@ -56,4 +56,11 @@ placement-create-admin-enpoint:
   cmd.run:
     - name: openstack endpoint create --region {{ pillar['openstack']['region'] }} placement admin http://{{ pillar['infra']['controller'] }}:8778
 
+
+{% else %}
+
+nova-endpoint-create-avoid-error:
+  test.nop:
+    - name: minionAlive
+
 {% endif %}

@@ -129,4 +129,11 @@ magnum_grant_ALL:
     - user: magnum
     - host: '%'
 
+{% else %}
+
+mysql-usergrant-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif %}

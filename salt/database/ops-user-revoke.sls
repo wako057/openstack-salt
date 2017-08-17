@@ -115,4 +115,11 @@ magnum_revoke_ALL:
     - user: magnum
     - host: '%'
 
+{% else %}
+
+mysql-userrevoke-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif %}

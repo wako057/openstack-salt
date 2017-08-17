@@ -11,5 +11,10 @@ nova-compute:
     - require:
       - pkg: nova-compute
 
+{% else %}
+
+nova-compute-avoid-error:
+  test.nop:
+    - name: minionAlive
 
 {% endif %}

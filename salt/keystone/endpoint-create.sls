@@ -26,4 +26,11 @@ keystone-add-role-user:
     - name: openstack role add --project {{ pillar['openstack']['project_name'] }} --user {{ pillar['openstack']['cloud_user'] }} user
 
 
+{% else %}
+
+keystone-endpoint-create-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif %}

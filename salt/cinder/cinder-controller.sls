@@ -19,10 +19,16 @@ cinder-scheduler:
 
 
 
-nova_api-manage-db-sync:
+cinder-manage-db-sync:
   cmd.run:
     - name: cinder-manage db sync
     - runas: cinder
 
+
+{% else %}
+
+cinder-controller-avoid-error:
+  test.nop:
+    - name: minionAlive
 
 {% endif %}

@@ -51,5 +51,11 @@ nova-manage-db-sync:
     - runas: nova
 
 
+{% else %}
+
+nova-controller-avoid-error:
+  test.nop:
+    - name: minionAlive
+
 
 {% endif %}

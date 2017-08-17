@@ -24,4 +24,11 @@ glance-manage-db-sync:
     - name: glance-manage db_sync
     - runas: glance
 
+{% else %}
+
+glance-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif %}

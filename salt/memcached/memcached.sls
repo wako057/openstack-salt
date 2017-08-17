@@ -25,4 +25,10 @@ memcached:
         - mode: 644
         - source: salt:///memcached/files/memcached.conf
 
+{% else %}
+
+memcached-avoid-error:
+  test.nop:
+    - name: minionAlive
+
 {% endif %}

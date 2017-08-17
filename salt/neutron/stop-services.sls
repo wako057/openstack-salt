@@ -30,4 +30,13 @@ neutron-linuxbridge-compute-agent-stop:
     service.dead:
       - name: neutron-linuxbridge-agent
 
+
+
+{% else %}
+
+neutron-stop-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif %}

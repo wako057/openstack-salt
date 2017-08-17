@@ -49,6 +49,10 @@ cinderv3-create-admin-enpoint:
   cmd.run:
     - name: openstack endpoint create --region {{ pillar['openstack']['region'] }} volumev3 admin http://{{ pillar['infra']['controller'] }}:8776/v3/%\(project_id\)s
 
+{% else %}
 
+cinder-endpoint-avoid-error:
+  test.nop:
+    - name: minionAlive
 
 {% endif %}

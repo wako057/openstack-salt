@@ -8,4 +8,11 @@ glance-api-stop:
     service.dead:
       - name: glance-api
 
+
+{% else %}
+
+glance-stop-avoid-error:
+  test.nop:
+    - name: minionAlive
+
 {% endif %}

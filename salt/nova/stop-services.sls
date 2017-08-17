@@ -29,4 +29,11 @@ nova-compute-stop:
     service.dead:
       - name: nova-compute
 
+{% else %}
+
+nova-stop-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif %}

@@ -38,4 +38,13 @@ neutron-linuxbridge-compute-agent-start:
     service.running:
       - name: neutron-linuxbridge-agent
 
+
+{% else %}
+
+neutron-start-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
+
 {% endif %}

@@ -5,5 +5,3 @@ include:
   - chrony.chrony
   - rabbitmq.rabbitmq
   - memcached.memcached
-  - database.mysql
-  - database.recreatedb

@@ -37,6 +37,12 @@ magnum_create_db:
   mysql_database.present:
     - name: magnum
 
+{% else %}
+
+mysql-dbcreate-avoid-error:
+  test.nop:
+    - name: minionAlive
+
 
 
 {% endif %}

@@ -32,5 +32,10 @@ cinder-create-vgcreate:
     - require:
       - pkg: cinder-volume
 
+{% else %}
+
+cinder-storage-avoid-error:
+  test.nop:
+    - name: minionAlive
 
 {% endif %}

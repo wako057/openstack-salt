@@ -18,4 +18,10 @@ cinder-volume-stop:
     service.dead:
       - name: cinder-volume
 
+{% else %}
+
+cinder-stop-avoid-error:
+  test.nop:
+    - name: minionAlive
+
 {% endif %}

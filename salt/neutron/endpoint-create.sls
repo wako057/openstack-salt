@@ -32,4 +32,11 @@ neutron-create-admin-enpoint:
     - name: openstack endpoint create --region {{ pillar['openstack']['region'] }} network admin http://{{ pillar['infra']['controller'] }}:9696
 
 
+{% else %}
+
+neutron-enpoint-create-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif %}
