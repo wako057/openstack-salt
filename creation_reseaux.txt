@@ -24,9 +24,15 @@ openstack flavor create --vcpus 4 --ram 8192 --disk 20 ramplus
 
 . admin-openrc
 
-openstack network create  --share --external --provider-physical-network provider --provider-network-type flat provider
+neutron net-create --shared --provider:physical_network provider --provider:network_type flat provider
 
-openstack subnet create --network provider --allocation-pool start=192.168.3.50,end=192.168.3.100 --dns-nameserver 8.8.4.4 --gateway 192.168.3.254 --subnet-range 192.168.3.0/24 provider
+neutron subnet-create --name provider --allocation-pool start=192.168.3.50,end=192.168.3.150  --dns-nameserver 8.8.4.4 --gateway 192.168.3.254  provider 192.168.3.0/24
+
+
+
+#openstack network create  --share --external --provider-physical-network provider --provider-network-type flat provider
+
+#openstack subnet create --network provider --allocation-pool start=192.168.3.50,end=192.168.3.150 --dns-nameserver 8.8.4.4 --gateway 192.168.3.254 --subnet-range 192.168.3.0/24 provider
 
 #### CREATION RESEAU SELF SERVICE
 
@@ -67,16 +73,17 @@ openstack security group rule create --proto tcp --dst-port 9200:9300 default
 
 #######################
 
+openstack server create --flavor normal --image debian_8.8 --nic net-id=6aa77620-6944-41c2-a2fa-f8e3193d7fd7 --security-group default --key-name  gregskey --user-data bootstrap-salt-master-01.sh salt-master-01
 
-openstack server create --flavor normalplus --image debian_8.8 --nic net-id=e72a7d59-575b-4232-a4ac-777d38fd97e1 --security-group default --key-name  gregskey --user-data bootstrap-salt-master-01.sh salt-master-01
+openstack server create --flavor normalplus --image debian_8.8 --nic net-id=18de2504-6617-45c2-8905-85fca6e206a0 --security-group default --key-name  gregskey --user-data bootstrap-salt-master-01.sh salt-master-01
 
-openstack server create --flavor normalplus --image debian_8.8 --nic net-id=e72a7d59-575b-4232-a4ac-777d38fd97e1 --security-group default --key-name  gregskey --user-data bootstrap-salt-elasticsearch.sh wister-logs-01
+openstack server create --flavor normalplus --image debian_8.8 --nic net-id=18de2504-6617-45c2-8905-85fca6e206a0 --security-group default --key-name  gregskey --user-data bootstrap-salt-elasticsearch.sh wister-logs-01
 
-openstack server create --flavor ramplus --image debian_8.8 --nic net-id=e72a7d59-575b-4232-a4ac-777d38fd97e1 --security-group default --key-name  gregskey --user-data bootstrap-salt-elasticsearch.sh wister-forwarder-01
+openstack server create --flavor ramplus --image debian_8.8 --nic net-id=18de2504-6617-45c2-8905-85fca6e206a0 --security-group default --key-name  gregskey --user-data bootstrap-salt-elasticsearch.sh wister-forwarder-01
 
 
 
-openstack server create --flavor normalplus --image debian_8.8 --nic net-id=e72a7d59-575b-4232-a4ac-777d38fd97e1 --security-group default --key-name  gregskey --user-data bootstrap-salt-elasticsearch.sh wister-logs-1
+openstack server create --flavor normalplus --image debian_8.8 --nic net-id=18de2504-6617-45c2-8905-85fca6e206a0 --security-group default --key-name  gregskey --user-data bootstrap-salt-elasticsearch.sh wister-logs-1
 
 
 openstack volume create --size 500 volume-500-4

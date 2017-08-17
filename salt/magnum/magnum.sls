@@ -8,15 +8,17 @@ non-interactive-install:
             DEBIAN_FRONTEND: noninteractive
 
 
-
-magnum-api:
-  pkg.installed: []
-
-magnum-conductor:
-  pkg.installed: []
-
-python-magnumclient:
-  pkg.installed: []
+install-magnum:
+  cmd.run:
+    -name: apt-get install -y magnum-api magnum-conductor python-magnumclient
+#magnum-api:
+#  pkg.installed: []
+#
+#magnum-conductor:
+#  pkg.installed: []
+#
+#python-magnumclient:
+#  pkg.installed: []
 
 
 magnum-manage-db-sync:

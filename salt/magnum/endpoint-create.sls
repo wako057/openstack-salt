@@ -6,7 +6,7 @@ include:
 
 glance-create-user:
   cmd.run:
-    - name:  openstack user create --domain default --password {{ pillar['password']['MAGNUM_DBPASS'] }} magnum
+    - name:  openstack user create --domain default --password {{ pillar['password']['MAGNUM_PASS'] }} magnum
 
 
 magnum-add-role-user:
