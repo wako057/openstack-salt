@@ -24,5 +24,10 @@ heat-manage-db-sync:
     - name: heat-manage db_sync
     - runas: heat
 
+{% else %}
+
+heat-avoid-error:
+  test.nop:
+    - name: minionAlive
 
 {% endif %}

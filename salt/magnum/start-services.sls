@@ -8,4 +8,12 @@ magnum-conductor-start:
     service.running:
       - name: magnum-conductor
 
+
+{% else %}
+
+magnum-start-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif %}

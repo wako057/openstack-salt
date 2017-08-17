@@ -12,4 +12,11 @@ heat-engine-stop:
     service.dead:
       - name: heat-engine
 
+{% else %}
+
+magnum-stop-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif %}

@@ -75,4 +75,10 @@ heat-stack-user-create-role:
   cmd.run:
     - name: openstack role create heat_stack_user
 
+{% else %}
+
+heat-endpoint-create-avoid-error:
+  test.nop:
+    - name: minionAlive
+
 {% endif %}

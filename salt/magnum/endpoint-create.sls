@@ -45,4 +45,11 @@ magnum-domain-admin-role-add-user:
   cmd.run:
     - name: openstack role add --domain magnum --user-domain magnum --user magnum_domain_admin admin
 
+{% else %}
+
+magnum-endpoint-create-avoid-error:
+  test.nop:
+    - name: minionAlive
+
+
 {% endif %}
