@@ -9,9 +9,9 @@ Architecture
 - Multinode installation on physical server - vm not tested
 
 # Requirement
-
-The controller minion file should have the following directive in order make the database manipulation possible
-
+- A salt Mast
+- Minion with salt configured to the master
+- The controller minion file should have the following directive in order make the database manipulation possible
 mysql.default_file: '/etc/mysql/debian.cnf'
 
 
