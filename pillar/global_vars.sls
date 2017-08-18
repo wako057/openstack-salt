@@ -1,41 +1,41 @@
 password:
-  ROOT_MYSQL_PASS: aish6aeyu3eiNaing6
-  ADMIN_PASS: bei4uKughe7Odo2Ame
-  CINDER_DBPASS: ieraY8ierugieg6oon
-  CINDER_PASS: adukithai3aiS7ungu
-  DASH_DBPASS: ahsheegee6aeM0zeek
-  DEMO_PASS: UBiil2og4ahp7ra3ta
-  GLANCE_DBPASS: ooGaegh1gingooPaiw
-  GLANCE_PASS: uvaiNohFooDoush6Oo
-  KEYSTONE_DBPASS: ziek3lu9eeziZoo1pi
-  METADATA_SECRET: aM1auha1eiTh8aiT5Z
-  NEUTRON_DBPASS: ni4oov8Uoxo1eul5oo
-  NEUTRON_PASS: uli5ichu4phou1ieK2
-  NOVA_DBPASS: eiziegoxidohPhaep3
-  NOVA_PASS: lu6ooR5eiku0eexeis
-  PLACEMENT_PASS: iZee5tiTh9siequieN
-  RABBIT_PASS: pooroJ5Ungozueweif
-  HEAT_DBPASS: More5oox8lodoh8bee
-  HEAT_PASS: fo2ooquoosha0leiFu
-  HEAT_DOMAIN_ADMIN: eiy1lie7Ahkeith9Ju
-  MAGNUM_DBPASS: Cu2baefeZ0uSheechu
-  MAGNUM_PASS: echohQueisiagh0doo
-  MAGNUM_DOMAIN_ADMIN: guingee7oezao4ieCh
+  ROOT_MYSQL_PASS: ROOT_MYSQL_PASS
+  ADMIN_PASS: ADMIN_PASS
+  CINDER_DBPASS: CINDER_DBPASS
+  CINDER_PASS: CINDER_PASS
+  DASH_DBPASS: DASH_DBPASS
+  DEMO_PASS: DEMO_PASS
+  GLANCE_DBPASS: GLANCE_DBPASS
+  GLANCE_PASS: GLANCE_PASS
+  KEYSTONE_DBPASS: KEYSTONE_DBPASS
+  METADATA_SECRET: METADATA_SECRET
+  NEUTRON_DBPASS: NEUTRON_DBPASS
+  NEUTRON_PASS: NEUTRON_PASS
+  NOVA_DBPASS: NOVA_DBPASS
+  NOVA_PASS: NOVA_PASS
+  PLACEMENT_PASS: PLACEMENT_PASS
+  RABBIT_PASS: RABBIT_PASS
+  HEAT_DBPASS: HEAT_DBPASS
+  HEAT_PASS: HEAT_PASS
+  HEAT_DOMAIN_ADMIN: HEAT_DOMAIN_ADMIN
+  MAGNUM_DBPASS: MAGNUM_DBPASS
+  MAGNUM_PASS: MAGNUM_PASS
+  MAGNUM_DOMAIN_ADMIN: MAGNUM_DOMAIN_ADMIN
 
 
 infra:
   controller: ops-1
-  compute: ops-2
-  storage: ops-3
+#  compute: ops-2
+#  storage: ops-3
   network_level: l3
 
 
 openstack:
-  region: WisterBureau
+  region: myRegion
+  project_name: "wakosproject"
+  cloud_user: wako057
   service_description: "Service Project"
-  project_name: "wister"
   project_description: "Wister Project"
-  cloud_user: wister
   glance_description: "OpenStack Image"
   nova_description: "OpenStack Compute"
   placement_description: "Placement API"
