@@ -1,16 +1,14 @@
 {% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
-heat-api-stop:
+magnum-api-stop:
     service.dead:
-      - name: heat-api
+      - name: magnum-api
 
-heat-api-cfn-stop:
+magnum-conductor-stop:
     service.dead:
-      - name: heat-api-cfn
+      - name: magnum-conductor
 
-heat-engine-stop:
-    service.dead:
-      - name: heat-engine
+
 
 {% else %}
 

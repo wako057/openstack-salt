@@ -18,7 +18,6 @@ nova-conductor-stop:
     service.dead:
       - name: nova-conductor
 
-
 nova-novncproxy-stop:
     service.dead:
       - name: nova-novncproxy

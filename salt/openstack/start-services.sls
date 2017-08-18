@@ -4,3 +4,4 @@ include:
   - nova.start-services
   - neutron.start-services
   - cinder.start-services
+  - heat.start-services
