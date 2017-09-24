@@ -3,3 +3,4 @@
 /vagrant/.vagrant/
 Supprimerait vagrant/.vagrant/
 Supprimerait vagrant/ssh/
+/openstack-salt.iml
