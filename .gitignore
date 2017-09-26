@@ -1,6 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 /.idea/
 /vagrant/.vagrant/
+/vagrant/ssh
 Supprimerait vagrant/.vagrant/
 Supprimerait vagrant/ssh/
 /openstack-salt.iml
