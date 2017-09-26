@@ -3,7 +3,7 @@
 The project is Tested with
 - Saltstack 2017.7
 - Ubuntu 16.04
-- Openstack Pike (August 2017)
+- Openstack Ocata (August 2017)
 
 Architecture
 - Multinode installation on physical server - vm not tested
