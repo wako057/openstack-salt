@@ -37,4 +37,8 @@ echo ""  >> /etc/salt/master
 echo "interface: $MASTER_IP" >> /etc/salt/master
 
 service salt-master restart
+
+cd /
+git clone https://github.com/wako057/openstack-salt.git /srv
+
 #echo ''
