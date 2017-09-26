@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ROOT_PASSWD='wako'
-MASTER_IP='192.168.1.17'
+MASTER_IP='172.16.16.220'
 
 sudo su
 # Definition des mot de passe utilisateurs - root

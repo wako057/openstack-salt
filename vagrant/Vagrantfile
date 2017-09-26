@@ -1,3 +1,4 @@
+#@IgnoreInspection BashAddShebang
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
@@ -6,42 +7,57 @@ Vagrant.configure("2") do |config|
 
   VAGRANT_ROOT = File.dirname(File.expand_path(__FILE__))
 
-  config.vm.define "ops1" do |ops1|
-    ops1.vm.box =  "ubuntu/trusty64"
-    ops1.vm.hostname =  "ops-1.wako057.net"
-    # ops1.vm.cpus = 2
-    ops1.vm.provider :virtualbox do |v|
-      v.customize ["modifyvm", :id, "--memory", 1024]
-      v.customize ["modifyvm", :id, "--name", "ops-1.wako057.net"]
+    config.vm.define "saltmaster" do |saltmaster|
+        saltmaster.vm.box =  "ubuntu/trusty64"
+        saltmaster.vm.hostname =  "salt-master.wako057.net"
+        saltmaster.vm.provider :virtualbox do |v|
+            v.customize ["modifyvm", :id, "--cpus", 1]
+            v.customize ["modifyvm", :id, "--memory", 1024]
+            v.customize ["modifyvm", :id, "--name", "salt-master.wako057.net"]
+        end
+        saltmaster.vm.provision :shell, path: "bootstrap-master.sh"
+        saltmaster.vm.network "public_network", ip: "172.16.16.220", bridge: "eth0"
+        saltmaster.vm.network "private_network", ip: "172.16.42.10"
     end
-    ops1.vm.provision :shell, path: "bootstrap.sh"
-    ops1.vm.network "public_network", ip: "192.168.1.142", bridge: "enp6s0"
-    ops1.vm.network "private_network", ip: "172.16.42.10"
-  end
 
-  config.vm.define "ops2" do |ops2|
-    ops2.vm.box =  "ubuntu/trusty64"
-    ops2.vm.hostname =  "ops-2.wako057.net"
-    ops2.vm.provider :virtualbox do |v|
-      v.customize ["modifyvm", :id, "--memory", 1024]
-      v.customize ["modifyvm", :id, "--name", "ops-2.wako057.net"]
+    config.vm.define "ops1" do |ops1|
+        ops1.vm.box =  "ubuntu/trusty64"
+        ops1.vm.hostname =  "ops-1.wako057.net"
+        ops1.vm.provider :virtualbox do |v|
+            v.customize ["modifyvm", :id, "--cpus", 2]
+            v.customize ["modifyvm", :id, "--memory", 1024]
+            v.customize ["modifyvm", :id, "--name", "ops-1.wako057.net"]
+        end
+        ops1.vm.provision :shell, path: "bootstrap-minion.sh"
+        ops1.vm.network "public_network", ip: "172.16.16.220", bridge: "eth0"
+        ops1.vm.network "private_network", ip: "172.16.42.10"
     end
-    ops2.vm.provision :shell, path: "bootstrap.sh"
-    ops2.vm.network "public_network", ip: "192.168.1.143", bridge: "enp6s0"
-    ops2.vm.network "private_network", ip: "172.16.42.11"
-  end
 
-  config.vm.define "ops3" do |ops3|
-    ops3.vm.box =  "ubuntu/trusty64"
-    ops3.vm.hostname =  "ops-3.wako057.net"
-    ops3.vm.provider :virtualbox do |v|
-      v.customize ["modifyvm", :id, "--memory", 1024]
-      v.customize ["modifyvm", :id, "--name", "ops-3.wako057.net"]
+    config.vm.define "ops2" do |ops2|
+        ops2.vm.box =  "ubuntu/trusty64"
+        ops2.vm.hostname =  "ops-2.wako057.net"
+        ops2.vm.provider :virtualbox do |v|
+        v.customize ["modifyvm", :id, "--cpus", 2]
+            v.customize ["modifyvm", :id, "--memory", 1024]
+            v.customize ["modifyvm", :id, "--name", "ops-2.wako057.net"]
+        end
+        ops2.vm.provision :shell, path: "bootstrap-minion.sh"
+        ops2.vm.network "public_network", ip: "172.16.16.220", bridge: "eth0"
+        ops2.vm.network "private_network", ip: "172.16.42.11"
     end
-    ops3.vm.provision :shell, path: "bootstrap.sh"
-    ops3.vm.network "public_network", ip: "192.168.1.144", bridge: "enp6s0"
-    ops3.vm.network "private_network", ip: "172.16.42.12"
-  end
+
+    config.vm.define "ops3" do |ops3|
+        ops3.vm.box =  "ubuntu/trusty64"
+        ops3.vm.hostname =  "ops-3.wako057.net"
+        ops3.vm.provider :virtualbox do |v|
+        v.customize ["modifyvm", :id, "--cpus", 2]
+            v.customize ["modifyvm", :id, "--memory", 1024]
+            v.customize ["modifyvm", :id, "--name", "ops-3.wako057.net"]
+        end
+        ops3.vm.provision :shell, path: "bootstrap-minion.sh"
+        ops3.vm.network "public_network", ip: "172.16.16.220", bridge: "eth0"
+        ops3.vm.network "private_network", ip: "172.16.42.12"
+    end
 
 
 end
