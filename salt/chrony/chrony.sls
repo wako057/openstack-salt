@@ -18,6 +18,11 @@ chrony:
         - mode: 644
         - source: salt://chrony/files/chrony-controller
 
+chrony-set-timezone:
+  cmd.run:
+    - name: timedatectl set-timezone Europe/Pari
+    - runas: root
+
 {% else %}
 
 /etc/chrony/chrony-compute-storage.conf:
@@ -31,3 +36,6 @@ chrony:
 
 
 {% endif %}
+
+
+
