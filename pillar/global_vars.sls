@@ -66,3 +66,9 @@ nodes:
     role: storage
     ip: 192.168.1.223
     iface-provider-name: eth2
+
+#  ops-4:
+#    name: ops-4
+#    role: compute
+#    ip: 192.168.1.224
+#    iface-provider-name: eth2

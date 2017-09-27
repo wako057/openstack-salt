@@ -59,4 +59,18 @@ Vagrant.configure("2") do |config|
     end
 
 
+  #
+  # config.vm.define "ops4" do |ops4|
+  #     ops4.vm.box =  "ubuntu/xenial64"
+  #     ops4.vm.hostname =  "ops-4.wako057.net"
+  #     ops4.vm.provider :virtualbox do |v|
+  #         v.customize ["modifyvm", :id, "--cpus", 2]
+  #         v.customize ["modifyvm", :id, "--memory", 2048]
+  #         v.customize ["modifyvm", :id, "--name", "ops-4.wako057.net"]
+  #     end
+  #     ops4.vm.provision :shell, path: "bootstrap-minion.sh"
+  #     ops4.vm.network "public_network", ip: "192.168.1.224", bridge: "eth0"
+  #     ops4.vm.network "private_network", ip: "172.16.42.12", virtualbox__intnet: "wakonetwork"
+  # end
+
 end

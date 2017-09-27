@@ -3,6 +3,7 @@
 192.168.1.221   ops-1.wako057.net ops-1 controller
 192.168.1.222   ops-2.wako057.net ops-2 compute1
 192.168.1.223   ops-3.wako057.net ops-3 block1
+192.168.1.224   ops-4.wako057.net ops-' compute4
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
