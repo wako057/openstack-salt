@@ -1,5 +1,5 @@
 pool fr.pool.net.org iburst
-allow 172.16.16.0/22
+allow {{ pillar['infra']['provider_network_cidr'] }}
 keyfile /etc/chrony/chrony.keys
 commandkey 1
 driftfile /var/lib/chrony/chrony.drift

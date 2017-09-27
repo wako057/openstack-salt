@@ -25,15 +25,15 @@ password:
 
 infra:
   controller: ops-1
-#  compute: ops-2
-#  storage: ops-3
   network_level: l3
+  provider_network_cidr: 192.168.1.0/22
+  selfservice_network_cidr: 10.0.42.0/22
 
 
 openstack:
   region: myRegion
-  project_name: "wakosproject"
   cloud_user: wako057
+  project_name: "wakosproject"
   service_description: "Service Project"
   project_description: "Wister Project"
   glance_description: "OpenStack Image"
@@ -52,17 +52,17 @@ nodes:
   ops-1:
     name: ops-1
     role: controller
-    ip: 192.168.1.142
-    iface-provider-name: eno2
+    ip: 192.168.1.221
+    iface-provider-name: eth2
 
   ops-2:
     name: ops-2
     role: compute
-    ip: 192.168.1.143
-    iface-provider-name: eno2
+    ip: 192.168.1.222
+    iface-provider-name: eth2
 
   ops-3:
     name: ops-3
     role: storage
-    ip: 192.168.1.143
-    iface-provider-name: eno2
+    ip: 192.168.1.223
+    iface-provider-name: eth2

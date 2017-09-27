@@ -7,11 +7,27 @@ chrony:
       - pkg: chrony
 
 
+{% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
-/etc/chrony/chrony{{ salt['grains.get']('host', '')  }}.conf:
+/etc/chrony/chrony-controller.conf:
     file.managed:
         - name: /etc/chrony/chrony.conf
+        - template: jinja
         - user: root
         - group: root
         - mode: 644
-        - source: salt://chrony/files/chrony-{{ salt['grains.get']('host', '') }}
+        - source: salt://chrony/files/chrony-controller
+
+{% else %}
+
+/etc/chrony/chrony-compute-storage.conf:
+    file.managed:
+        - name: /etc/chrony/chrony.conf
+        - template: jinja
+        - user: root
+        - group: root
+        - mode: 644
+        - source: salt://chrony/files/chrony-compute-storage
+
+
+{% endif %}

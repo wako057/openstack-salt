@@ -24,4 +24,3 @@ python-openstackclient:
 autoremove:
   cmd.run:
     - name: apt-get autoremove -y
-
