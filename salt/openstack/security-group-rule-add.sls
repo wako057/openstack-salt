@@ -1,7 +1,7 @@
 {% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
 include:
-    - openstack.demo-environnement
+    - openstack.environnement-user
 
 
 

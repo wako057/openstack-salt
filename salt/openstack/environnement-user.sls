@@ -1,4 +1,4 @@
-admin-openrc:
+user-openrc:
     environ.setenv:
         - name: doesnotmatter
         - value:
