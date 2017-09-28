@@ -63,7 +63,7 @@ Host and Network Interface, you have to declare:
 
 - salt '*' state.apply network.interfaces
 
-- salt '*' state.apply openstack.admin-environnement
+- salt '*' state.apply openstack.environnement-admin
 
 - salt '*' state.apply openstack.openrc
 

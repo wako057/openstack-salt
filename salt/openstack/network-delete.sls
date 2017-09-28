@@ -1,7 +1,7 @@
 {% if pillar['nodes'][grains['host']]['role'] == 'controller' %}
 
 include:
-    - openstack.admin-environnement
+    - openstack.environnement-admin
 
 openstack-delete-subnet:
   cmd.run:
