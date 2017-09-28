@@ -18,10 +18,6 @@ chrony:
         - mode: 644
         - source: salt://chrony/files/chrony-controller
 
-chrony-set-timezone:
-  cmd.run:
-    - name: timedatectl set-timezone Europe/Paris
-    - runas: root
 
 {% else %}
 
@@ -39,3 +35,7 @@ chrony-set-timezone:
 
 
 
+chrony-set-timezone:
+  cmd.run:
+    - name: timedatectl set-timezone Europe/Paris
+    - runas: root
