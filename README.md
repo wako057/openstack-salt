@@ -53,6 +53,7 @@ Host and Network Interface, you have to declare:
 
 - salt '*' state.apply heat
 
+- salt '*' state.apply openstack.restart-services
 
 # Available States
 
