@@ -20,7 +20,7 @@ chrony:
 
 chrony-set-timezone:
   cmd.run:
-    - name: timedatectl set-timezone Europe/Pari
+    - name: timedatectl set-timezone Europe/Paris
     - runas: root
 
 {% else %}
