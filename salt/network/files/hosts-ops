@@ -1,10 +1,10 @@
 127.0.0.1	localhost
 
-172.16.16.235   saltmaster.wako057.net saltmaster
-172.16.16.231   ops-1.wako057.net ops-1 controller
-172.16.16.232   ops-2.wako057.net ops-2 compute1
-172.16.16.233   ops-3.wako057.net ops-3 block1
-172.16.16.234   ops-4.wako057.net ops-' compute4
+192.168.1.40   salt-master.wako057.net salt-master
+192.168.1.41   ops-1.wako057.net ops-1 controller
+192.168.1.42   ops-2.wako057.net ops-2 compute1
+192.168.1.43   ops-3.wako057.net ops-3 block1
+192.168.1.44   ops-4.wako057.net ops-' compute4
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback

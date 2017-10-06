@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
             v.customize ["modifyvm", :id, "--name", "salt-master.wako057.net"]
         end
         saltmaster.vm.provision :shell, path: "bootstrap-master.sh"
-        saltmaster.vm.network "public_network", ip: "172.16.16.235", bridge: "eth0"
+        saltmaster.vm.network "public_network", ip: "192.168.1.40", bridge: "eth0"
     end
 
     config.vm.define "ops1" do |ops1|
@@ -28,8 +28,8 @@ Vagrant.configure("2") do |config|
             v.customize ["modifyvm", :id, "--name", "ops-1.wako057.net"]
         end
         ops1.vm.provision :shell, path: "bootstrap-minion.sh"
-        ops1.vm.network "public_network", ip: "172.16.16.231", bridge: "eth0"
-        ops1.vm.network "private_network", ip: "10.0.0.10", virtualbox__intnet: "wakonetwork"
+        ops1.vm.network "public_network", ip: "192.168.1.41", bridge: "eth0"
+        ops1.vm.network "private_network", ip: "172.16.42.10", virtualbox__intnet: "wakonetwork"
     end
 
     config.vm.define "ops2" do |ops2|
@@ -41,8 +41,8 @@ Vagrant.configure("2") do |config|
             v.customize ["modifyvm", :id, "--name", "ops-2.wako057.net"]
         end
         ops2.vm.provision :shell, path: "bootstrap-minion.sh"
-        ops2.vm.network "public_network", ip: "172.16.16.232", bridge: "eth0"
-        ops2.vm.network "private_network", ip: "10.0.0.11", virtualbox__intnet: "wakonetwork"
+        ops2.vm.network "public_network", ip: "192.168.1.42", bridge: "eth0"
+        ops2.vm.network "private_network", ip: "172.16.42.11", virtualbox__intnet: "wakonetwork"
     end
 
     config.vm.define "ops3" do |ops3|
@@ -54,7 +54,8 @@ Vagrant.configure("2") do |config|
             v.customize ["modifyvm", :id, "--name", "ops-3.wako057.net"]
         end
         ops3.vm.provision :shell, path: "bootstrap-minion.sh"
-        ops3.vm.network "public_network", ip: "172.16.16.233", bridge: "eth0"
+        ops3.vm.network "public_network", ip: "192.168.1.43", bridge: "eth0"
+#        ops3.vm.network "private_network", ip: "172.16.42.12"
     end
 
 

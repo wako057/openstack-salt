@@ -11,3 +11,32 @@ bootstrap.sh, you have to fill the ip of the salt master, basically the Bridge I
 Once you are logged as root on the salt-master:
 
 salt-key -A
+
+
+salt '*' state.apply openstack
+
+salt '*' state.apply database
+
+salt '*' state.apply keystone
+
+salt '*' state.apply glance
+
+salt '*' state.apply nova
+
+salt '*' state.apply neutron
+
+salt '*' state.apply dashboard
+
+salt '*' state.apply cinder
+
+salt '*' state.apply heat
+
+salt '*' state.apply openstack.restart-services
+
+salt '*' state.apply openstack.restart-services
+
+salt '*' state.apply openstack.flavor-create
+
+salt '*' state.apply openstack.network-create
+
+salt '*' state.apply openstack.security-group-rule-add

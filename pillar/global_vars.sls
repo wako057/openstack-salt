@@ -26,10 +26,10 @@ password:
 infra:
   controller: ops-1
   network_level: l3
-  provider_network_cidr: 172.16.16.0/22
-  provider_network_pool_start: 172.16.16.180
-  provider_network_pool_end: 172.16.16.200
-  provider_network_gate: 172.16.16.1
+  provider_network_cidr: 192.168.1.0/22
+  provider_network_pool_start: 192.168.1.100
+  provider_network_pool_end: 192.168.1.200
+  provider_network_gate: 192.168.1.1
 
   selfservice_network_cidr: 10.0.0.0/22
   dns_nameserver: 8.8.8.8
@@ -57,19 +57,19 @@ nodes:
   ops-1:
     name: ops-1
     role: controller
-    ip: 172.16.16.231
+    ip: 192.168.1.41
     iface-provider-name: enp0s9
 
   ops-2:
     name: ops-2
     role: compute
-    ip: 172.16.16.232
+    ip: 192.168.1.42
     iface-provider-name: enp0s9
 
   ops-3:
     name: ops-3
     role: storage
-    ip: 172.16.16.233
+    ip: 192.168.1.43
     iface-provider-name: enp0s9
 
 #  ops-4:

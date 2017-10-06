@@ -51,6 +51,10 @@ Host and Network Interface, you have to declare:
 
 - salt '*' state.apply cinder
 
+- salt '*' state.apply heat
+
+- salt '*' state.apply openstack.restart-services
+
 # Available States
 
 - salt '*' state.apply chrony.chrony
