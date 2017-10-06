@@ -11,6 +11,7 @@ glance:
     - require:
       - pkg: glance
 
+
 /etc/glance/glance-registry.conf:
   file.managed:
     - source: salt://glance/files/glance-registry.conf

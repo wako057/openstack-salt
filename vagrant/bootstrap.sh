@@ -1,6 +1,6 @@
 
 ROOT_PASSWD='wako'
-MASTER_IP='192.168.1.220'
+MASTER_IP='172.16.16.235'
 
 
 # Definition des mot de passe utilisateurs - root
